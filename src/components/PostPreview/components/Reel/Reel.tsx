@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react'
+import React from 'react'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import { ISocialComponentProps } from '../../PostPreview'
@@ -12,8 +12,8 @@ import { isVideo, parseDescription } from '../../PostPreview.utils'
 import ProgressBar from '../../../ProgressBar'
 import Paper from '../../../Paper'
 
-const Reel: FC<ISocialComponentProps> = ({ post, isVideoMuted }) => {
-  const [timePercentage, setTimePercentage] = useState(0)
+const Reel: React.FC<ISocialComponentProps> = ({ post, isVideoMuted }) => {
+  const [timePercentage, setTimePercentage] = React.useState(0)
   const parsedDescription = post.description !== undefined ? parseDescription(post.description) : null
 
   const onTimeUpdate = (time: number): void => {

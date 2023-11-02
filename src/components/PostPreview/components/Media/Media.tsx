@@ -1,4 +1,4 @@
-import React, { FC, SyntheticEvent } from 'react'
+import React from 'react'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import { isImage, isVideo } from '../../PostPreview.utils'
@@ -12,8 +12,8 @@ interface IMediaProps {
   onTimeUpdate?: (time: number) => void
 }
 
-const Media: FC<IMediaProps> = ({ src, isVideoMuted, onTimeUpdate }) => {
-  const onTimeUpdateHandler = (e: SyntheticEvent<HTMLVideoElement>): void => {
+const Media: React.FC<IMediaProps> = ({ src, isVideoMuted, onTimeUpdate }) => {
+  const onTimeUpdateHandler = (e: React.SyntheticEvent<HTMLVideoElement>): void => {
     if (onTimeUpdate !== undefined) {
       const percentage = Math.floor((e.currentTarget.currentTime / e.currentTarget.duration) * 100)
       onTimeUpdate(percentage)

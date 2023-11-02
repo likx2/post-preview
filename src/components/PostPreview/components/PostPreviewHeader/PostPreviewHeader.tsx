@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React from 'react'
 import Paper from '../../../Paper'
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
@@ -31,7 +31,7 @@ interface IPostPreviewHeaderProps extends IVideoMutedProps {
   postType: PostType
 }
 
-const PostPreviewHeader: FC<IPostPreviewHeaderProps> = ({ socialType, postType, isVideoMuted, onVideoMute }) => {
+const PostPreviewHeader: React.FC<IPostPreviewHeaderProps> = ({ socialType, postType, isVideoMuted, onVideoMute }) => {
   const SocialIcon = mapSocialTypeToIcon[socialType]
 
   const onVolumeIconClick = (): void => {

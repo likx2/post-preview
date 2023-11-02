@@ -1,10 +1,10 @@
-import React, { FC } from 'react'
+import React from 'react'
 import { ISocialComponentProps } from '../../PostPreview'
 import { PostType } from '../../../../types'
 import Reel from '../Reel'
 import FacebookPost from './components/FacebookPost'
 
-const FacebookComponent: FC<ISocialComponentProps> = (props) => {
+const FacebookComponent: React.FC<ISocialComponentProps> = (props) => {
   let PostTypeBasedComponent
   switch (props.post.postType) {
     case PostType.POST:

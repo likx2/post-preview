@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React from 'react'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import { parseDescription } from '../../../../PostPreview.utils'
@@ -20,7 +20,7 @@ const getGridClassName = (itemsCount: number): string => {
   return styles[`grid${itemsCount}`]
 }
 
-const FacebookPost: FC<ISocialComponentProps> = ({ post, isVideoMuted }) => {
+const FacebookPost: React.FC<ISocialComponentProps> = ({ post, isVideoMuted }) => {
   const parsedDescription = post.description !== undefined ? parseDescription(post.description) : null
 
   return (

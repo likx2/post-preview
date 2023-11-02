@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from 'react'
+import React from 'react'
 import Box from '@mui/material/Box'
 import Media from '../../../Media'
 import { ReactComponent as LikeIcon } from '../../../../img/like-white.svg'
@@ -12,10 +12,10 @@ import { isImage, isVideo } from '../../../../PostPreview.utils'
 const TIME_INCREMENT_PERCENTAGE = 5
 const TIME_INCREMENT_INTERVAL = 300
 
-const InstagramStory: FC<ISocialComponentProps> = ({ post, isVideoMuted }) => {
-  const [timePercentage, setTimePercentage] = useState(0)
+const InstagramStory: React.FC<ISocialComponentProps> = ({ post, isVideoMuted }) => {
+  const [timePercentage, setTimePercentage] = React.useState(0)
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (post.media === undefined || isImage(post.media[0].url)) {
       const timer = setInterval(() => {
         setTimePercentage((oldProgress) => {

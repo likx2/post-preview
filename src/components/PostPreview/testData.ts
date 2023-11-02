@@ -1,13 +1,24 @@
 import { PostType, SocialType } from '../../types'
+
+// instagram empty media
+export const instagramEmptyMedia = {
+  postType: PostType.POST,
+  description: 'Some description\r\n\r\n#test #super #lovewarsaw\r\nhttps://example.com',
+  account: {
+    name: 'Amplorium',
+    url: 'https://amplorium.s3.amazonaws.com/u/970702e573774c03bc31029ccc8db202/facebook113072825141511.jpg'
+  },
+  socialType: SocialType.INSTAGRAM
+}
 // instagram post photo
 export const instagramPostPhoto = {
   postType: PostType.POST,
-  // media: [
-  //   {
-  //     id: '252e2a351c6c478584f29c4ec28fd8ef',
-  //     url: 'https://amplorium.s3.amazonaws.com/u/af97be91e0fb410a85fcd61f5ce0365f/252e2a351c6c478584f29c4ec28fd8ef.png'
-  //   }
-  // ],
+  media: [
+    {
+      id: '252e2a351c6c478584f29c4ec28fd8ef',
+      url: 'https://amplorium.s3.amazonaws.com/u/af97be91e0fb410a85fcd61f5ce0365f/252e2a351c6c478584f29c4ec28fd8ef.png'
+    }
+  ],
   description: 'Some description\r\n\r\n#test #super #lovewarsaw\r\nhttps://example.com',
   account: {
     name: 'Amplorium',
@@ -113,6 +124,17 @@ export const instagramReel = {
   },
   isMuted: true,
   socialType: SocialType.INSTAGRAM
+}
+
+// facebook empty media
+export const facebookEmptyMedia = {
+  postType: PostType.POST,
+  description: 'Some description\r\n\r\n#test #super #lovewarsaw\r\nhttps://example.com',
+  account: {
+    name: 'Amplorium',
+    url: 'https://amplorium.s3.amazonaws.com/u/970702e573774c03bc31029ccc8db202/facebook113072825141511.jpg'
+  },
+  socialType: SocialType.FACEBOOK
 }
 
 // facebook post photo

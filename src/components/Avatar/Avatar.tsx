@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React from 'react'
 import MuiAvatar from '@mui/material/Avatar'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
@@ -14,7 +14,7 @@ export interface IAvatarProps {
   inline?: boolean
 }
 
-const Avatar: FC<IAvatarProps> = ({
+const Avatar: React.FC<IAvatarProps> = ({
   src,
   name,
   secondaryText,

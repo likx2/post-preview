@@ -1,10 +1,10 @@
-import React, { DetailedHTMLProps, VideoHTMLAttributes, forwardRef } from 'react'
+import React from 'react'
 
-interface IVideoProps extends DetailedHTMLProps<VideoHTMLAttributes<HTMLVideoElement>, HTMLVideoElement> {
+interface IVideoProps extends React.DetailedHTMLProps<React.VideoHTMLAttributes<HTMLVideoElement>, HTMLVideoElement> {
   src?: string
 }
 
-const Video = forwardRef<HTMLVideoElement, IVideoProps>(({ src, ...rest }, ref) => {
+const Video = React.forwardRef<HTMLVideoElement, IVideoProps>(({ src, ...rest }, ref) => {
   return (
         <video ref={ref} {...rest}>
             <source src={src} type="video/mp4" />

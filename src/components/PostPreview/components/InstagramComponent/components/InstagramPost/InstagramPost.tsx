@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react'
+import React from 'react'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import Carousel from 'react-material-ui-carousel'
@@ -15,8 +15,8 @@ import { isImage, isVideo, parseDescription } from '../../../../PostPreview.util
 import Media from '../../../Media'
 import styles from './InstagramPost.module.css'
 
-const InstagramPost: FC<ISocialComponentProps> = ({ post, isVideoMuted, onVideoMute }) => {
-  const [activeSlide, setActiveSlide] = useState(0)
+const InstagramPost: React.FC<ISocialComponentProps> = ({ post, isVideoMuted, onVideoMute }) => {
+  const [activeSlide, setActiveSlide] = React.useState(0)
   const parsedDescription = post.description !== undefined ? parseDescription(post.description) : null
 
   return (
