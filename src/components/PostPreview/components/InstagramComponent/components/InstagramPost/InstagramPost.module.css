@@ -1,0 +1,22 @@
+.dotContainer {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+}
+
+.dot {
+    color: #ffffff99 !important;
+}
+
+.dot svg {
+    width: 6px;
+    height: 6px;
+}
+
+.activeDot {
+    color: #FFF !important;
+}
