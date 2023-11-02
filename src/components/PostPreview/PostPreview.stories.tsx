@@ -1,4 +1,5 @@
 import React from 'react'
+import { StoryObj } from '@storybook/react'
 import PostPreview from './PostPreview'
 import {
   facebookPostCarousel,
@@ -15,7 +16,9 @@ export default {
   title: 'Components/PostPreview'
 }
 
-export const Instagram = () => {
+type Story = StoryObj<typeof PostPreview>
+
+export const Instagram: Story = () => {
   return (
         <div style={{ display: 'flex', gap: '50px', flexWrap: 'wrap' }}>
           <PostPreview post={instagramPostPhoto} />
@@ -32,7 +35,7 @@ Instagram.story = {
   name: 'Instagram'
 }
 
-export const Facebook = () => {
+export const Facebook: Story = () => {
   return (
         <div style={{ display: 'flex', gap: '50px', flexWrap: 'wrap' }}>
             <PostPreview post={facebookPostPhoto} />

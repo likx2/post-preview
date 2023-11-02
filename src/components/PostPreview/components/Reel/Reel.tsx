@@ -14,9 +14,9 @@ import Paper from '../../../Paper'
 
 const Reel: FC<ISocialComponentProps> = ({ post, isVideoMuted }) => {
   const [timePercentage, setTimePercentage] = useState(0)
-  const parsedDescription = post.description ? parseDescription(post.description) : null
+  const parsedDescription = post.description !== undefined ? parseDescription(post.description) : null
 
-  const onTimeUpdate = (time: number) => {
+  const onTimeUpdate = (time: number): void => {
     setTimePercentage(time)
   }
 
@@ -25,7 +25,7 @@ const Reel: FC<ISocialComponentProps> = ({ post, isVideoMuted }) => {
             <Media src={post.media?.[0].url} isVideoMuted={isVideo(post.media?.[0].url) ? isVideoMuted : undefined} onTimeUpdate={isVideo(post.media?.[0].url) ? onTimeUpdate : undefined} />
             <Box sx={{ position: 'absolute', left: '20px', bottom: '50px' }}>
                 <Avatar src={post.account.url} name={post.account.name} size={40} color='#FFF' nameSx={{ fontSize: '16px' }} />
-                {parsedDescription?.text && <Typography sx={{ color: '#FFF', marginTop: '11px', fontSize: '13px', overflow: 'hidden', whiteSpace: 'nowrap', width: '348px', textOverflow: 'ellipsis' }}>{parsedDescription.text}</Typography>}
+                {((parsedDescription?.text) !== undefined) && <Typography sx={{ color: '#FFF', marginTop: '11px', fontSize: '13px', overflow: 'hidden', whiteSpace: 'nowrap', width: '348px', textOverflow: 'ellipsis' }}>{parsedDescription.text}</Typography>}
             </Box>
             <Box sx={{ position: 'absolute', right: '20px', bottom: '50px', display: 'flex', flexDirection: 'column', gap: '38px' }}>
                 <LikeIcon />

@@ -41,7 +41,7 @@ const PostPreview: FC<IPostPreviewProps> = (props) => {
                 isVideoMuted={isVideoMuted}
                 onVideoMute={onVideoMute}
              />
-             {SocialTypeBasedComponent && (
+             {SocialTypeBasedComponent !== undefined && (
                  <Box sx={{ marginTop: '20px', maxHeight: '920px' }}>
                    <SocialTypeBasedComponent {...props} isVideoMuted={isVideoMuted} onVideoMute={onVideoMute} />
                  </Box>

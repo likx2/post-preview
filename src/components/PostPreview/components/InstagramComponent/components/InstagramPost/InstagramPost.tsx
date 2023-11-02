@@ -17,7 +17,7 @@ import styles from './InstagramPost.module.css'
 
 const InstagramPost: FC<ISocialComponentProps> = ({ post, isVideoMuted, onVideoMute }) => {
   const [activeSlide, setActiveSlide] = useState(0)
-  const parsedDescription = post.description ? parseDescription(post.description) : null
+  const parsedDescription = post.description !== undefined ? parseDescription(post.description) : null
 
   return (
         <Paper>
@@ -28,7 +28,7 @@ const InstagramPost: FC<ISocialComponentProps> = ({ post, isVideoMuted, onVideoM
                     secondaryText='Posted just now'
                 />
             </Box>
-            {post.media?.length && post.media.length > 1
+            {(post.media !== undefined) && (post.media.length > 1)
               ? (
                     <Carousel
                         autoPlay={false}
@@ -90,11 +90,11 @@ const InstagramPost: FC<ISocialComponentProps> = ({ post, isVideoMuted, onVideoM
                     <SaveIcon/>
                 </Box>
                 <Typography variant='subtitle2' sx={{ fontWeight: '600', marginTop: '14px' }}>128 likes</Typography>
-                {parsedDescription && (
+                {parsedDescription !== null && (
                     <Box sx={{ marginTop: '14px', whiteSpace: 'pre-wrap' }}>
-                        {parsedDescription.text && <Typography variant='body2' sx={{ color: '#1D1D1D' }}>{parsedDescription.text}</Typography>}
-                        {parsedDescription.hashtags && <Typography variant='body2' sx={{ color: '#748BF0' }}>{parsedDescription.hashtags}</Typography>}
-                        {parsedDescription.links && <Typography variant='body2' sx={{ color: '#748BF0' }}>{parsedDescription.links}</Typography>}
+                        {parsedDescription.text !== null && <Typography variant='body2' sx={{ color: '#1D1D1D' }}>{parsedDescription.text}</Typography>}
+                        {parsedDescription.hashtags !== null && <Typography variant='body2' sx={{ color: '#748BF0' }}>{parsedDescription.hashtags}</Typography>}
+                        {parsedDescription.links !== null && <Typography variant='body2' sx={{ color: '#748BF0' }}>{parsedDescription.links}</Typography>}
                     </Box>
                 )}
             </Box>

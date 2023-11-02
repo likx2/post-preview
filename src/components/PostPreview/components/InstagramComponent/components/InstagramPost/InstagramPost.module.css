@@ -8,8 +8,8 @@
     gap: 7px;
 }
 
-.dot {
-    color: #ffffff99 !important;
+button.dot {
+    color: #ffffff99;
 }
 
 .dot svg {
@@ -17,6 +17,6 @@
     height: 6px;
 }
 
-.activeDot {
-    color: #FFF !important;
+button.activeDot {
+    color: #FFF;
 }

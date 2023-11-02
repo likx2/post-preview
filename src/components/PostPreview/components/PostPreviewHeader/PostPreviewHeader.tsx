@@ -35,13 +35,13 @@ const PostPreviewHeader: FC<IPostPreviewHeaderProps> = ({ socialType, postType, 
   const SocialIcon = mapSocialTypeToIcon[socialType]
 
   const onVolumeIconClick = (): void => {
-    onVideoMute(!isVideoMuted)
+    onVideoMute(isVideoMuted === false)
   }
 
   return (
         <Paper sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 20px', minHeight: '50px' }}>
              <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                  {SocialIcon && <SocialIcon/>}
+                  {SocialIcon !== undefined && <SocialIcon/>}
                  <Typography
                     variant='subtitle2'
                     sx={{ marginLeft: '16px', color: '#292a3acc' }}

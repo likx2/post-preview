@@ -1,4 +1,4 @@
-import React, { FC, DetailedHTMLProps, VideoHTMLAttributes, forwardRef } from 'react'
+import React, { DetailedHTMLProps, VideoHTMLAttributes, forwardRef } from 'react'
 
 interface IVideoProps extends DetailedHTMLProps<VideoHTMLAttributes<HTMLVideoElement>, HTMLVideoElement> {
   src?: string

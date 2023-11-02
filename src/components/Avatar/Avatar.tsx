@@ -31,10 +31,10 @@ const Avatar: FC<IAvatarProps> = ({
                 sx={{ width: size, height: size }}
             />
             <Box>
-                <Typography variant='subtitle2' sx={{ color: color ?? '#292A3A', ...(nameSx && nameSx) }}>{name}</Typography>
-                {secondaryText && !inline && <Typography variant='caption' sx={{ color: color ?? '#A29FB6' }}>{secondaryText}</Typography>}
+                <Typography variant='subtitle2' sx={{ color: color ?? '#292A3A', ...(nameSx !== undefined && nameSx) }}>{name}</Typography>
+                {(secondaryText !== undefined) && !inline && <Typography variant='caption' sx={{ color: color ?? '#A29FB6' }}>{secondaryText}</Typography>}
             </Box>
-            {secondaryText && inline && <Typography variant='caption' sx={{ color: color ?? '#A29FB6' }}>{secondaryText}</Typography>}
+            {(secondaryText !== undefined) && inline && <Typography variant='caption' sx={{ color: color ?? '#A29FB6' }}>{secondaryText}</Typography>}
         </Box>
   )
 }

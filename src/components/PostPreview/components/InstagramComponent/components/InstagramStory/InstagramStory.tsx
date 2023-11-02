@@ -16,7 +16,7 @@ const InstagramStory: FC<ISocialComponentProps> = ({ post, isVideoMuted }) => {
   const [timePercentage, setTimePercentage] = useState(0)
 
   useEffect(() => {
-    if (!post.media || isImage(post.media[0].url)) {
+    if (post.media === undefined || isImage(post.media[0].url)) {
       const timer = setInterval(() => {
         setTimePercentage((oldProgress) => {
           if (oldProgress === 100) {
@@ -32,7 +32,7 @@ const InstagramStory: FC<ISocialComponentProps> = ({ post, isVideoMuted }) => {
     }
   }, [])
 
-  const onTimeUpdate = (time: number) => {
+  const onTimeUpdate = (time: number): void => {
     setTimePercentage(time)
   }
 

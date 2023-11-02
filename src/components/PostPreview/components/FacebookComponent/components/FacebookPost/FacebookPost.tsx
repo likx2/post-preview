@@ -12,7 +12,7 @@ import styles from './FacebookPost.module.css'
 
 const MEDIA_AMOUNT_TO_DISPLAY = 5
 
-const getGridClassName = (itemsCount: number) => {
+const getGridClassName = (itemsCount: number): string => {
   if (itemsCount > MEDIA_AMOUNT_TO_DISPLAY) {
     return styles[`grid${MEDIA_AMOUNT_TO_DISPLAY}`]
   }
@@ -21,7 +21,7 @@ const getGridClassName = (itemsCount: number) => {
 }
 
 const FacebookPost: FC<ISocialComponentProps> = ({ post, isVideoMuted }) => {
-  const parsedDescription = post.description ? parseDescription(post.description) : null
+  const parsedDescription = post.description !== undefined ? parseDescription(post.description) : null
 
   return (
         <Paper>
@@ -31,18 +31,18 @@ const FacebookPost: FC<ISocialComponentProps> = ({ post, isVideoMuted }) => {
                     name={post.account.name}
                     secondaryText='Posted just now'
                 />
-                {parsedDescription && (
+                {parsedDescription !== null && (
                     <Box sx={{ whiteSpace: 'pre-wrap', marginTop: '28px' }}>
-                        {parsedDescription.text &&
+                        {(parsedDescription.text !== null) &&
                             <Typography variant='body2' sx={{ color: '#1D1D1D' }}>{parsedDescription.text}</Typography>}
-                        {parsedDescription.hashtags &&
+                        {(parsedDescription.hashtags !== null) &&
                             <Typography variant='body2' sx={{ color: '#748BF0' }}>{parsedDescription.hashtags}</Typography>}
-                        {parsedDescription.links &&
+                        {parsedDescription.links !== null &&
                             <Typography variant='body2' sx={{ color: '#748BF0' }}>{parsedDescription.links}</Typography>}
                     </Box>
                 )}
             </Box>
-            {post.media?.length && post.media.length > 1
+            {(post.media !== undefined) && (post.media.length > 1)
               ? (
                     <Box sx={{ height: '360px' }} className={`${styles.grid} ${getGridClassName(post.media.length)}`}>
                         {(post.media.length > MEDIA_AMOUNT_TO_DISPLAY ? post.media.slice(0, MEDIA_AMOUNT_TO_DISPLAY - 1) : post.media).map(item => (

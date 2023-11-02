@@ -15,6 +15,6 @@ const FacebookComponent: FC<ISocialComponentProps> = (props) => {
       break
   }
 
-  return PostTypeBasedComponent ? <PostTypeBasedComponent {...props} /> : null
+  return PostTypeBasedComponent !== undefined ? <PostTypeBasedComponent {...props} /> : null
 }
 export default FacebookComponent
