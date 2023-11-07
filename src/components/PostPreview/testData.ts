@@ -1,7 +1,7 @@
 import { PostType, SocialType } from '../../types'
 
-// instagram empty media
-export const instagramEmptyMedia = {
+// instagram post empty media
+export const instagramPostEmptyMedia = {
   postType: PostType.POST,
   description: 'Some description\r\n\r\n#test #super #lovewarsaw\r\nhttps://example.com',
   account: {
@@ -10,6 +10,29 @@ export const instagramEmptyMedia = {
   },
   socialType: SocialType.INSTAGRAM
 }
+
+// instagram story empty media
+export const instagramStoryEmptyMedia = {
+  postType: PostType.STORY,
+  description: 'Some description\r\n\r\n#test #super #lovewarsaw\r\nhttps://example.com',
+  account: {
+    name: 'Amplorium',
+    url: 'https://amplorium.s3.amazonaws.com/u/970702e573774c03bc31029ccc8db202/facebook113072825141511.jpg'
+  },
+  socialType: SocialType.INSTAGRAM
+}
+
+// instagram reel empty media
+export const instagramReelEmptyMedia = {
+  postType: PostType.REEL,
+  description: 'Some description\r\n\r\n#test #super #lovewarsaw\r\nhttps://example.com',
+  account: {
+    name: 'Amplorium',
+    url: 'https://amplorium.s3.amazonaws.com/u/970702e573774c03bc31029ccc8db202/facebook113072825141511.jpg'
+  },
+  socialType: SocialType.INSTAGRAM
+}
+
 // instagram post photo
 export const instagramPostPhoto = {
   postType: PostType.POST,
@@ -117,24 +140,13 @@ export const instagramReel = {
       url: 'https://amplorium.s3.amazonaws.com/u/af97be91e0fb410a85fcd61f5ce0365f/5e3816df606941909bb19e14f44db756.mp4'
     }
   ],
-  description: '',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do',
   account: {
     name: 'Amplorium',
     url: 'https://amplorium.s3.amazonaws.com/u/970702e573774c03bc31029ccc8db202/facebook113072825141511.jpg'
   },
   isMuted: true,
   socialType: SocialType.INSTAGRAM
-}
-
-// facebook empty media
-export const facebookEmptyMedia = {
-  postType: PostType.POST,
-  description: 'Some description\r\n\r\n#test #super #lovewarsaw\r\nhttps://example.com',
-  account: {
-    name: 'Amplorium',
-    url: 'https://amplorium.s3.amazonaws.com/u/970702e573774c03bc31029ccc8db202/facebook113072825141511.jpg'
-  },
-  socialType: SocialType.FACEBOOK
 }
 
 // facebook post photo
@@ -163,6 +175,18 @@ export const facebookPostVideo = {
       url: 'https://amplorium.s3.amazonaws.com/u/af97be91e0fb410a85fcd61f5ce0365f/5e3816df606941909bb19e14f44db756.mp4'
     }
   ],
+  description: 'Some description\r\n\r\n#test #super #lovewarsaw\r\nhttps://example.com',
+  account: {
+    name: 'Amplorium',
+    url: 'https://amplorium.s3.amazonaws.com/u/970702e573774c03bc31029ccc8db202/facebook113072825141511.jpg'
+  },
+  isMuted: true,
+  socialType: SocialType.FACEBOOK
+}
+
+// facebook post empty media
+export const facebookPostEmptyMedia = {
+  postType: PostType.POST,
   description: 'Some description\r\n\r\n#test #super #lovewarsaw\r\nhttps://example.com',
   account: {
     name: 'Amplorium',
@@ -218,6 +242,18 @@ export const facebookReel = {
       url: 'https://amplorium.s3.amazonaws.com/u/af97be91e0fb410a85fcd61f5ce0365f/5e3816df606941909bb19e14f44db756.mp4'
     }
   ],
+  description: 'Some description Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut\r\n\r\n#test #super #lovewarsaw\r\nhttps://example.com',
+  account: {
+    name: 'Amplorium',
+    url: 'https://amplorium.s3.amazonaws.com/u/970702e573774c03bc31029ccc8db202/facebook113072825141511.jpg'
+  },
+  isMuted: true,
+  socialType: SocialType.FACEBOOK
+}
+
+// facebook reel empty media
+export const facebookReelEmptyMedia = {
+  postType: PostType.REEL,
   description: 'Some description Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut\r\n\r\n#test #super #lovewarsaw\r\nhttps://example.com',
   account: {
     name: 'Amplorium',

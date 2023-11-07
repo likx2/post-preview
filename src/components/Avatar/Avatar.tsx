@@ -4,7 +4,7 @@ import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import { SxProps, Theme } from '@mui/material'
 
-export interface IAvatarProps {
+export interface AvatarProps {
   src: string
   name: string
   color?: string
@@ -14,7 +14,7 @@ export interface IAvatarProps {
   inline?: boolean
 }
 
-const Avatar: React.FC<IAvatarProps> = ({
+const Avatar: React.FC<AvatarProps> = ({
   src,
   name,
   secondaryText,
@@ -23,18 +23,20 @@ const Avatar: React.FC<IAvatarProps> = ({
   size = 34,
   inline = false
 }) => {
+  const secondaryTextElement = <Typography variant='caption' sx={{ color: (theme) => color ?? theme.palette.grey100 }}>{secondaryText}</Typography>
+
   return (
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: '11px' }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: (theme) => theme.spacing(1.375) }}>
             <MuiAvatar
                 src={src}
                 alt={name}
                 sx={{ width: size, height: size }}
             />
             <Box>
-                <Typography variant='subtitle2' sx={{ color: color ?? '#292A3A', ...(nameSx !== undefined && nameSx) }}>{name}</Typography>
-                {(secondaryText !== undefined) && !inline && <Typography variant='caption' sx={{ color: color ?? '#A29FB6' }}>{secondaryText}</Typography>}
+                <Typography variant='subtitle2' sx={{ color: (theme) => color ?? theme.palette.black100, ...(nameSx !== undefined && nameSx) }}>{name}</Typography>
+                {(secondaryText !== undefined) && !inline && secondaryTextElement}
             </Box>
-            {(secondaryText !== undefined) && inline && <Typography variant='caption' sx={{ color: color ?? '#A29FB6' }}>{secondaryText}</Typography>}
+            {(secondaryText !== undefined) && inline && secondaryTextElement}
         </Box>
   )
 }

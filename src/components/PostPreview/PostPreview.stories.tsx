@@ -1,22 +1,36 @@
 import { StoryObj, Meta } from '@storybook/react'
+import { ThemeProvider } from '@mui/material/styles'
+import CssBaseline from '@mui/material/CssBaseline'
 import PostPreview from './PostPreview'
 import {
-  facebookEmptyMedia,
   facebookPostCarousel,
   facebookPostPhoto,
   facebookPostVideo,
+  facebookPostEmptyMedia,
   facebookReel,
-  instagramEmptyMedia,
+  facebookReelEmptyMedia,
+  instagramPostEmptyMedia,
   instagramPostCarousel,
   instagramPostPhoto,
   instagramPostVideo,
   instagramReel,
   instagramStoryPhoto,
-  instagramStoryVideo
+  instagramStoryVideo,
+  instagramStoryEmptyMedia,
+  instagramReelEmptyMedia
 } from './testData'
+import theme from '../../theme'
 
 const meta: Meta<typeof PostPreview> = {
-  component: PostPreview
+  component: PostPreview,
+  decorators: [
+    (Story) => (
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <Story />
+        </ThemeProvider>
+    )
+  ]
 }
 
 export default meta
@@ -24,27 +38,40 @@ export default meta
 type Story = StoryObj<typeof PostPreview>
 
 // Instagram
-export const IstagramPostPhoto: Story = {
+export const InstagramPostPhoto: Story = {
   render: () => <PostPreview post={instagramPostPhoto} />
 }
-export const IstagramPostVideo: Story = {
+
+export const InstagramPostVideo: Story = {
   render: () => <PostPreview post={instagramPostVideo} />
 }
-export const IstagramPostCarousel: Story = {
+
+export const InstagramPostCarousel: Story = {
   render: () => <PostPreview post={instagramPostCarousel} />
 }
-export const IstagramStoryVideo: Story = {
+
+export const InstagramPostEmptyMedia: Story = {
+  render: () => <PostPreview post={instagramPostEmptyMedia} />
+}
+
+export const InstagramStoryVideo: Story = {
   render: () => <PostPreview post={instagramStoryVideo} />
 }
-export const IstagramStoryPhoto: Story = {
+
+export const InstagramStoryPhoto: Story = {
   render: () => <PostPreview post={instagramStoryPhoto} />
 }
-export const IstagramReel: Story = {
+
+export const InstagramStoryEmptyMedia: Story = {
+  render: () => <PostPreview post={instagramStoryEmptyMedia} />
+}
+
+export const InstagramReel: Story = {
   render: () => <PostPreview post={instagramReel} />
 }
 
-export const IstagramEmptyMedia: Story = {
-  render: () => <PostPreview post={instagramEmptyMedia} />
+export const InstagramReelEmptyMedia: Story = {
+  render: () => <PostPreview post={instagramReelEmptyMedia} />
 }
 
 // Facebook
@@ -60,10 +87,14 @@ export const FacebookPostCarousel: Story = {
   render: () => <PostPreview post={facebookPostCarousel} />
 }
 
+export const FacebookPostEmptyMedia: Story = {
+  render: () => <PostPreview post={facebookPostEmptyMedia} />
+}
+
 export const FacebookReel: Story = {
   render: () => <PostPreview post={facebookReel} />
 }
 
-export const FacebookEmptyMedia: Story = {
-  render: () => <PostPreview post={facebookEmptyMedia} />
+export const FacebookReelEmptyMedia: Story = {
+  render: () => <PostPreview post={facebookReelEmptyMedia} />
 }

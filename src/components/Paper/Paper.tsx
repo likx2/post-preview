@@ -1,8 +1,9 @@
-import MuiPaper, { PaperProps } from '@mui/material/Paper'
-import { styled } from '@mui/material/styles'
+import React from 'react'
+import { PaperProps } from '@mui/material/Paper'
+import { PaperStyled } from './Paper.style'
 
-const Paper = styled((props) => <MuiPaper elevation={0} {...props} />)<PaperProps>(() => ({
-  borderRadius: '10px'
-}))
+const Paper: React.FC<PaperProps> = (props) => (
+    <PaperStyled elevation={0} {...props} />
+)
 
 export default Paper

@@ -8,7 +8,6 @@ import { ReactComponent as FacebookIcon } from '../../img/facebook.svg'
 import { ReactComponent as VolumeUpIcon } from '../../img/volume-up.svg'
 import { ReactComponent as VolumeOffIcon } from '../../img/volume-off.svg'
 import { PostType, SocialType } from '../../../../types'
-import { IVideoMutedProps } from '../../PostPreview'
 
 const mapSocialTypeToIcon = {
   [SocialType.INSTAGRAM]: InstagramIcon,
@@ -26,9 +25,11 @@ const mapPostTypeToName = {
   [PostType.STORY]: 'story'
 }
 
-interface IPostPreviewHeaderProps extends IVideoMutedProps {
+interface IPostPreviewHeaderProps {
   socialType: SocialType
   postType: PostType
+  isVideoMuted: boolean | undefined
+  onVideoMute: (muted: boolean | undefined) => void
 }
 
 const PostPreviewHeader: React.FC<IPostPreviewHeaderProps> = ({ socialType, postType, isVideoMuted, onVideoMute }) => {
@@ -39,12 +40,12 @@ const PostPreviewHeader: React.FC<IPostPreviewHeaderProps> = ({ socialType, post
   }
 
   return (
-        <Paper sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 20px', minHeight: '50px' }}>
+        <Paper sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: (theme) => `0 ${theme.spacing(2.5)}`, minHeight: '50px' }}>
              <Box sx={{ display: 'flex', alignItems: 'center' }}>
                   {SocialIcon !== undefined && <SocialIcon/>}
                  <Typography
                     variant='subtitle2'
-                    sx={{ marginLeft: '16px', color: '#292a3acc' }}
+                    sx={{ marginLeft: (theme) => theme.spacing(2), color: (theme) => theme.palette.black80 }}
                  >
                     {mapSocialTypeToName[socialType]} {mapPostTypeToName[postType]} post preview
                  </Typography>

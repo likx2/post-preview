@@ -1,8 +1,8 @@
 import React from 'react'
 
-type IImageProps = React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>
+type ImageProps = React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>
 
-const Image = React.forwardRef<HTMLImageElement, IImageProps>((props, ref) => {
+const Image = React.forwardRef<HTMLImageElement, ImageProps>((props, ref) => {
   return <img ref={ref} {...props} />
 })
 

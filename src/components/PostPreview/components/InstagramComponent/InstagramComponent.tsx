@@ -1,11 +1,16 @@
 import React from 'react'
-import { ISocialComponentProps } from '../../PostPreview'
-import { PostType } from '../../../../types'
+import { Post, PostType } from '../../../../types'
 import InstagramPost from './components/InstagramPost'
 import Reel from '../Reel'
 import InstagramStory from './components/InstagramStory'
 
-const InstagramComponent: React.FC<ISocialComponentProps> = (props) => {
+interface InstagramComponentProps {
+  post: Post
+  isVideoMuted: boolean | undefined
+  onVideoMute: (muted: boolean | undefined) => void
+}
+
+const InstagramComponent: React.FC<InstagramComponentProps> = (props) => {
   let PostTypeBasedComponent
   switch (props.post.postType) {
     case PostType.POST:

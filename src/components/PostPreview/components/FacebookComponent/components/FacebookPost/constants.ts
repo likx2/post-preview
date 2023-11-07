@@ -1,0 +1,1 @@
+export const MEDIA_AMOUNT_TO_DISPLAY = 5

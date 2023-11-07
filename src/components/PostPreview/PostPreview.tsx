@@ -1,20 +1,20 @@
 import React from 'react'
 import Box from '@mui/material/Box'
-import { IPost, SocialType } from '../../types'
+import { Post, SocialType } from '../../types'
 import PostPreviewHeader from './components/PostPreviewHeader'
 import InstagramComponent from './components/InstagramComponent'
 import FacebookComponent from './components/FacebookComponent'
 
-export interface IPostPreviewProps {
-  post: IPost
+interface IPostPreviewProps {
+  post: Post
 }
 
-export interface IVideoMutedProps {
-  isVideoMuted: boolean | undefined
-  onVideoMute: (muted: boolean | undefined) => void
-}
-
-export type ISocialComponentProps = IPostPreviewProps & IVideoMutedProps
+// export interface IVideoMutedProps {
+//   isVideoMuted: boolean | undefined
+//   onVideoMute: (muted: boolean | undefined) => void
+// }
+//
+// export type ISocialComponentProps = IPostPreviewProps & IVideoMutedProps
 
 const PostPreview: React.FC<IPostPreviewProps> = (props) => {
   const [isVideoMuted, setIsVideoMuted] = React.useState(props.post.isMuted)

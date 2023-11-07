@@ -1,10 +1,15 @@
 import React from 'react'
-import { ISocialComponentProps } from '../../PostPreview'
-import { PostType } from '../../../../types'
+import { Post, PostType } from '../../../../types'
 import Reel from '../Reel'
 import FacebookPost from './components/FacebookPost'
 
-const FacebookComponent: React.FC<ISocialComponentProps> = (props) => {
+interface FacebookComponentProps {
+  post: Post
+  isVideoMuted: boolean | undefined
+  onVideoMute: (muted: boolean | undefined) => void
+}
+
+const FacebookComponent: React.FC<FacebookComponentProps> = (props) => {
   let PostTypeBasedComponent
   switch (props.post.postType) {
     case PostType.POST:

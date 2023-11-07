@@ -1,18 +1,18 @@
-export interface IPost {
+export interface Post {
   socialType: SocialType
   postType: PostType
-  account: IAccount
-  media?: IMediaValue[]
+  account: Account
+  media?: MediaValue[]
   description?: string
   isMuted?: boolean
 }
 
-export interface IMediaValue {
+export interface MediaValue {
   id: string
   url: string
 }
 
-export interface IAccount {
+export interface Account {
   name: string
   url: string
   secondaryText?: string

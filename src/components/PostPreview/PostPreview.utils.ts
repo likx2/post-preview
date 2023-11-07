@@ -9,7 +9,7 @@ export const isVideo = (url: string | undefined): boolean => {
 }
 
 export const getHashtags = (text: string): string | null => {
-  return text.match(/#\w+/g)?.join('') ?? null
+  return text.match(/#\w+/g)?.join(' ') ?? null
 }
 
 export const getLinks = (text: string): string | null => {
@@ -17,17 +17,21 @@ export const getLinks = (text: string): string | null => {
 }
 
 export const getDescriptionText = (text: string): string | null => {
-  return text.match(/^[\s\S]*?(?=#)/)?.[0] ?? null
+  if (getHashtags(text) !== null) {
+    return text.match(/^[^#]+/)?.[0] ?? null
+  } else if (getLinks(text) !== null) {
+    return text.match(/^[^https?]+/)?.[0] ?? null
+  }
+
+  return text
 }
 
 export const parseDescription = (description: string): {
   hashtags: string | null
   links: string | null
   text: string | null
-} => {
-  return {
-    hashtags: getHashtags(description),
-    links: getLinks(description),
-    text: getDescriptionText(description)
-  }
-}
+} => ({
+  hashtags: getHashtags(description),
+  links: getLinks(description),
+  text: getDescriptionText(description)
+})
