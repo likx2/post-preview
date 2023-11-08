@@ -7,7 +7,7 @@ import { ReactComponent as ShareIcon } from '../../../../img/share-white.svg'
 import Avatar from '../../../../../Avatar'
 import ProgressBar from '../../../../../ProgressBar'
 import Paper from '../../../../../Paper'
-import { isImage, isVideo } from '../../../../PostPreview.utils'
+import { isVideo } from '../../../../PostPreview.utils'
 import { Post } from '../../../../../../types'
 import useProgress from '../../../../../../hooks/useProgress'
 
@@ -18,7 +18,7 @@ interface InstagramStoryProps {
 }
 
 const InstagramStory: React.FC<InstagramStoryProps> = ({ post, isVideoMuted }) => {
-  const [timePercentage, onTimeUpdate] = useProgress(post.media === undefined || isImage(post.media[0]?.url))
+  const [timePercentage, onTimeUpdate] = useProgress(isVideo(post.media?.[0]?.url))
   const theme = useTheme()
 
   return (

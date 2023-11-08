@@ -7,7 +7,7 @@ import { ReactComponent as CommentIcon } from '../../img/comment-white.svg'
 import { ReactComponent as ShareIcon } from '../../img/share-white.svg'
 import { ReactComponent as MoreInfoIcon } from '../../img/more-info-white.svg'
 import Avatar from '../../../Avatar'
-import { isImage, isVideo, parseDescription } from '../../PostPreview.utils'
+import { isVideo, parseDescription } from '../../PostPreview.utils'
 import ProgressBar from '../../../ProgressBar'
 import Paper from '../../../Paper'
 import { Post } from '../../../../types'
@@ -21,7 +21,7 @@ interface ReelProps {
 }
 
 const Reel: React.FC<ReelProps> = ({ post, isVideoMuted }) => {
-  const [timePercentage, onTimeUpdate] = useProgress(post.media === undefined || isImage(post.media[0]?.url))
+  const [timePercentage, onTimeUpdate] = useProgress(isVideo(post.media?.[0]?.url))
   const theme = useTheme()
   const parsedDescription = post.description !== undefined ? parseDescription(post.description) : null
 

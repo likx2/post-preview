@@ -3,11 +3,11 @@ import React from 'react'
 const TIME_INCREMENT_PERCENTAGE = 5
 const TIME_INCREMENT_INTERVAL = 300
 
-const useProgress = (isNotVideo: boolean): [number, (time: number) => void] => {
+const useProgress = (isVideo: boolean): [number, (time: number) => void] => {
   const [timePercentage, setTimePercentage] = React.useState(0)
 
   React.useEffect(() => {
-    if (isNotVideo) {
+    if (!isVideo) {
       const timer = setInterval(() => {
         setTimePercentage((oldProgress) => {
           if (oldProgress === 100) {
