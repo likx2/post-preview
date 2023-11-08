@@ -9,13 +9,6 @@ interface IPostPreviewProps {
   post: Post
 }
 
-// export interface IVideoMutedProps {
-//   isVideoMuted: boolean | undefined
-//   onVideoMute: (muted: boolean | undefined) => void
-// }
-//
-// export type ISocialComponentProps = IPostPreviewProps & IVideoMutedProps
-
 const PostPreview: React.FC<IPostPreviewProps> = (props) => {
   const [isVideoMuted, setIsVideoMuted] = React.useState(props.post.isMuted)
 

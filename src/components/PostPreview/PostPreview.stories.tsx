@@ -23,6 +23,7 @@ import theme from '../../theme'
 
 const meta: Meta<typeof PostPreview> = {
   component: PostPreview,
+  render: (args) => <PostPreview {...args} />,
   decorators: [
     (Story) => (
         <ThemeProvider theme={theme}>
@@ -39,62 +40,92 @@ type Story = StoryObj<typeof PostPreview>
 
 // Instagram
 export const InstagramPostPhoto: Story = {
-  render: () => <PostPreview post={instagramPostPhoto} />
+  args: {
+    post: instagramPostPhoto
+  }
 }
 
 export const InstagramPostVideo: Story = {
-  render: () => <PostPreview post={instagramPostVideo} />
+  args: {
+    post: instagramPostVideo
+  }
 }
 
 export const InstagramPostCarousel: Story = {
-  render: () => <PostPreview post={instagramPostCarousel} />
+  args: {
+    post: instagramPostCarousel
+  }
 }
 
 export const InstagramPostEmptyMedia: Story = {
-  render: () => <PostPreview post={instagramPostEmptyMedia} />
+  args: {
+    post: instagramPostEmptyMedia
+  }
 }
 
 export const InstagramStoryVideo: Story = {
-  render: () => <PostPreview post={instagramStoryVideo} />
+  args: {
+    post: instagramStoryVideo
+  }
 }
 
 export const InstagramStoryPhoto: Story = {
-  render: () => <PostPreview post={instagramStoryPhoto} />
+  args: {
+    post: instagramStoryPhoto
+  }
 }
 
 export const InstagramStoryEmptyMedia: Story = {
-  render: () => <PostPreview post={instagramStoryEmptyMedia} />
+  args: {
+    post: instagramStoryEmptyMedia
+  }
 }
 
 export const InstagramReel: Story = {
-  render: () => <PostPreview post={instagramReel} />
+  args: {
+    post: instagramReel
+  }
 }
 
 export const InstagramReelEmptyMedia: Story = {
-  render: () => <PostPreview post={instagramReelEmptyMedia} />
+  args: {
+    post: instagramReelEmptyMedia
+  }
 }
 
 // Facebook
 export const FacebookPostPhoto: Story = {
-  render: () => <PostPreview post={facebookPostPhoto} />
+  args: {
+    post: facebookPostPhoto
+  }
 }
 
 export const FacebookPostVideo: Story = {
-  render: () => <PostPreview post={facebookPostVideo} />
+  args: {
+    post: facebookPostVideo
+  }
 }
 
 export const FacebookPostCarousel: Story = {
-  render: () => <PostPreview post={facebookPostCarousel} />
+  args: {
+    post: facebookPostCarousel
+  }
 }
 
 export const FacebookPostEmptyMedia: Story = {
-  render: () => <PostPreview post={facebookPostEmptyMedia} />
+  args: {
+    post: facebookPostEmptyMedia
+  }
 }
 
 export const FacebookReel: Story = {
-  render: () => <PostPreview post={facebookReel} />
+  args: {
+    post: facebookReel
+  }
 }
 
 export const FacebookReelEmptyMedia: Story = {
-  render: () => <PostPreview post={facebookReelEmptyMedia} />
+  args: {
+    post: facebookReelEmptyMedia
+  }
 }
